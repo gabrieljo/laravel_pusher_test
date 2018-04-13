@@ -20,7 +20,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //Route::apiResource('/questions', 'QuestionController');
 Route::get('/questions', 'QuestionController@index');
 Route::post('/questions', 'QuestionController@store');
+Route::patch('/questions/{question}', 'QuestionController@update');
 Route::get('/questions/{question}', 'QuestionController@show');
 Route::delete('/questions/{question}', 'QuestionController@destroy');
 
 
+Route::apiResource('/categories', 'CategoryController');

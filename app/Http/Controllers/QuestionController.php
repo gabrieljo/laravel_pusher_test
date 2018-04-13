@@ -28,4 +28,10 @@ class QuestionController extends Controller
         Question::create();
         return response('Created', Response::HTTP_CREATED);
     }
+
+    public function update(Request $request, Question $question){
+        $question->update($request->all());
+
+        return response('Update', Response::HTTP_ACCEPTED);
+    }
 }
