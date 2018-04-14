@@ -31,13 +31,8 @@ export default{
     }
   },
   methods:{
-    submitForm(formName){
-        axios.post('/api/auth/login', formName)
-          .then(res=>console.log(res.data))
-          .catch(error=>console.log(error.reponse.data))
-    },
-    resetForm(){
-
+    submitForm(form){
+      User.login(form)
     }
   }
 }

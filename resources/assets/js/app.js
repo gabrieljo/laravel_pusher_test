@@ -13,8 +13,11 @@ import Vue from 'vue'
 import ElementUI from 'element-ui';
 
 Vue.use(ElementUI)
+//공통으로 사용하기 위해서 이쪽에 지정
+import User from './Helpers/User'
+window.User = User;
 
-
+console.log(User.logout());
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
