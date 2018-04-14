@@ -24,6 +24,7 @@ Route::group([
     Route::post('payload', 'AuthController@payload');
     Route::post('me', 'AuthController@me');
 
+    Route::post('signup', 'AuthController@signup');
 });
 
 //Route::apiResource('/questions', 'QuestionController');

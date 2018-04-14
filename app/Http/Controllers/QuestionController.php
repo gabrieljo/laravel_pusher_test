@@ -9,6 +9,9 @@ use Illuminate\Http\Response;
 
 class QuestionController extends Controller
 {
+    public function __construct(){
+        $this->middleware('jwt', ['except' => ['index', 'show']]);
+    }
     public function index(){
         //resource 생성해서 데이터 내보낼 format 지정
         return QuestionResource::collection(Question::latest()->get());

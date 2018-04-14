@@ -9,6 +9,11 @@ use Illuminate\Http\Response;
 
 class CategoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('jwt');
+    }
+
     public function store(Request $request){
         $category = new Category();
         $category->name = $request->name;
