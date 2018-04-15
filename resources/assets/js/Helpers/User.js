@@ -15,6 +15,7 @@ class User {
 
     if(Token.isValid(access_token)){
       Auth.store(user, access_token)
+      window.location='/forum'
     }
   }
 
@@ -29,10 +30,12 @@ class User {
 
   loggedIn(){
     return this.hasToken()
+
   }
 
   logout(){
     Auth.clear();
+    window.location = '/forum'
   }
 
   name(){

@@ -15,7 +15,12 @@
             </el-form-item>
             <el-form-item>
                 <el-button type="primary" @click="submitForm(form)">Login</el-button>
+                <router-link to="/signup">
+                    <el-button type="info">Signup</el-button>
+                </router-link>
             </el-form-item>
+
+
         </el-form>
     </el-container>
 </template>
@@ -30,9 +35,15 @@ export default{
       }
     }
   },
+  created(){
+    if(User.loggedIn()){
+      this.$router.push({name:'forum'})
+    }
+  },
   methods:{
     submitForm(form){
       User.login(form)
+      this.$router.push({name: 'forum'})
     }
   }
 }
